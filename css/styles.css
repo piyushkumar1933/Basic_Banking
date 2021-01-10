@@ -1,0 +1,96 @@
+*{
+    margin:0;
+    padding:0;
+}
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.692),rgba(0, 0, 0, 0.678)),url("../images/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+.nam{
+    color:white;
+    font-weight: 400;
+    font-size: 160%;
+}
+.nam:hover{
+    border-bottom: none;
+}
+h1 {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+h3{
+    position: relative;
+   font-weight: 400;
+    margin:0px 5px;
+    color:#fff;
+    top: -15%;
+
+}
+
+
+
+.slogan{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    letter-spacing: 0.5px;
+    word-spacing: 2.5px;
+}
+
+
+.btnn{
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 200px;
+    font-size: 150%;
+    border: 1px solid #ff5600;
+    transition: background-color 0.4s, border 0.4s, color 0.4s;
+
+}
+.btnn-or{
+    color:  #ff5600;
+
+}
+.btnn-ex{
+    color: #ff5600;
+}
+.btnn:hover{
+    cursor: pointer;
+    background-color: #ff5600;
+    color: white;
+    border: 1px solid #ee5000;
+}
+
+
+
+.main-nav{
+    margin-top: 15px;
+    float: right;
+    list-style: none;
+}
+.main-nav li{
+    display: inline-block;
+    margin-left: 45px;
+}
+.main-nav li a{
+    color: white;
+    text-decoration: none;
+    font-size: 150%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+.main-nav li a:hover,.main-nav li a:active{
+    border-bottom: 2px solid #ff5600;
+}
+/* View Profile*/
