@@ -19,8 +19,8 @@
                 <li class="nam">Basic Banking System</li>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="showuser.php">View Customers</a></li>
-                <li><a href="#">Transfer Money</a></li>
-                <li><a href="#">Recent Transactions</a></li>
+                <li><a href="transfer.php">Transfer Money</a></li>
+                <li><a href="recent.php">Recent Transactions</a></li>
               </ul>
               </div>
       </nav>
@@ -76,10 +76,6 @@ echo('</td><td>');
 echo(htmlentities($row['CurrentBalance']));
 echo('</td><td>');
 echo('<a class="btn btn-success" href="view_profile.php?AccountNo='.$row['AccountNo'].'"role="button">View Profile</a>');
-echo('</td><td>');
-echo('<a class="btn btn-primary" href="edit_member.php?AccountNo='.$row['AccountNo'].'"role="button">Edit</a>');
-echo('</td><td>');
-echo('<a class="btn btn-danger" href="delete_member.php?AccountNo='.$row['AccountNo'].'"role="button">Delete</a>');
 echo('</td></tr>');
 }
 echo('</tbody><table>'); 
@@ -99,8 +95,6 @@ echo('</tbody><table>');
                         
 
                         <th scope="col">Action</th>
-                        // <th scope="col">Action</th>
-                        // <th scope="col">Action</th>
                     </tr>
                 </thead><tbody>');
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -122,9 +116,6 @@ echo('</tbody><table>');
         echo('</td><td>');
         echo('<a class="btn btn-success" href="view_profile.php?AccountNo='.$row['AccountNo'].'"role="button">View Profile</a>');
         echo('</td><td>');
-        // echo('<a class="btn btn-primary" href="edit_member.php?AccountNo='.$row['AccountNo'].'"role="button">Edit</a>');
-        // echo('</td><td>');
-        // echo('<a class="btn btn-danger" href="delete_member.php?AccountNo='.$row['AccountNo'].'"role="button">Delete</a>');
         echo('</td></tr>');
     }
     echo('</tbody><table>'); 

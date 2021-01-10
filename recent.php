@@ -24,8 +24,8 @@
                 <li class="nam">Basic Banking System</li>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="showuser.php">View Customers</a></li>
-                <li><a href="#">Transfer Money</a></li>
-                <li><a href="#">Recent Transactions</a></li>
+                <li><a href="transfer.php">Transfer Money</a></li>
+                <li><a href="recent.php">Recent Transactions</a></li>
               </ul>
               </div>
       </nav>
