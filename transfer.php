@@ -91,7 +91,7 @@ if(isset($_POST['sub'])){
             ':fn' => $fnamee,
             ':la' => $lname,
             ':ln' => $lnamee,
-            ':am' => $net)
+            ':am' => $am)
         );
   $sql = " UPDATE `user` SET `CurrentBalance`='$fnew' WHERE AccountNo = '$fname'";
   $stmt = $pdo->query($sql);
@@ -109,13 +109,18 @@ else{
 }
 }
 
+if(isset($_SESSION["id"])){
+  $val = $_SESSION["id"];
+  session_unset();
+
+}
 // ?>
 <div class= "row, form">
 <form method="post">
                     <div class="form-group row">
                         <label for="fname" class="col-md-2 col-form-label">Enter Your Account Number</label>
                         <div class="col-md-4">
-                            <input type="number" name="fname" id="fname" class="form-control"  placeholder = "Enter Your Account Number:">
+                            <input type="number" name="fname" id="fname" class="form-control"  value="<?php echo $val;?>" placeholder = "Enter Your Account Number:">
                         </div>
                     </div>
 

@@ -4,8 +4,7 @@
     background-color: black;
     background-size: cover;
     padding: 1%;
-    width: 97%;
-    margin-left: 1.37%;
+    width: 100%;
 }
 .f1{
     text-align: center;

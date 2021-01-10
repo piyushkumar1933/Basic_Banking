@@ -22,7 +22,7 @@
       <div class="slogan">
         <h1> Transactions are now simple and secure</h1>
         <a href="showuser.php" class="btn btnn btnn-or">View Customers</a>
-        <a href="#" class="btn btnn btnn-ex">Recent Transactions</a>
+        <a href="recent.php" class="btn btnn btnn-ex">Recent Transactions</a>
       </div>
     </div>
             </div>

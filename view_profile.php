@@ -31,6 +31,7 @@
   text-align:center;
 }
    </style>
+
  <body>
  <nav style="background-color:black;">
         <div class= "row">
@@ -59,11 +60,12 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
  echo '</p><p> Current Balance:'.$row['CurrentBalance'];
  echo "</p>";
  $_SESSION["id"] = $row['AccountNo'];
+ $_SESSION['Ac'] = $row['AccountNo'];
 ?>
 </div>
 <div class ="trans">
 <a class="btn btn-primary" href="transfer.php"role="button">Transfer Money</a>
-<a class="btn btn-primary" href="transfer.php"role="button">Your Recent Transactions</a>
+<a class="btn btn-primary" href="mstatement.php"role="button">Your Recent Transactions</a>
 </div>
 
 </div>

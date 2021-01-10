@@ -29,7 +29,56 @@
               </ul>
               </div>
       </nav>
+      <div class="jumbotron">
+        <form method="post" class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                  <input type="text" name="search" placeholder="Search for Customers" class="form-control" >
+                  <select  id = "se"name="se" value = "se" class="form-control">
+                    <option value="TransId" >Transaction Id</option>
+                    <option value="fname"> Sender  Name</option>
+                    <option value="fan"> Sender Account Number</option>
+                    <option value="lname"> Reciver Name</option>
+                    <option value="lan"> Reciver Account Number</option>
+                  </select>
+                  <input type="submit" class="btn btn-primary" value="Search" name="submit"></i>
+        </form>
+  </div>
 <?php
+ if(isset($_POST['submit'])){
+  $vall = $_POST['se'];
+  $searchq = $_POST['search'];
+  $qu = "SELECT * FROM transfer WHERE  $vall LIKE '%$searchq%'";
+  $stmt = $pdo->query($qu);
+  echo ("<h4>Search result for : '".$searchq."' </h4>");
+  echo('<table class="table table-striped">
+  <thead>
+      <tr>
+          <th scope="col">Transaction Id</th>
+          <th scope="col">Sender Name</th>
+          <th scope="col">Sender Account Number</th>
+          <th scope="col">Reciver Name</th>
+          <th scope="col">Reciver Account Number</th>
+          <th scope="col">Amout Transferd</th>
+      </tr>
+  </thead><tbody>');
+while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+echo('<tr>
+  <th scope="row">');
+echo(htmlentities($row['TransId']));
+echo('</th><td>');
+echo(htmlentities($row['fname']));
+echo('</td><td>');
+echo(htmlentities($row['fan']));
+echo('</td><td>');
+echo(htmlentities($row['lname']));
+echo('</td><td>');
+echo(htmlentities($row['lan']));
+echo('</td><td>');
+echo(htmlentities($row['amount']));
+echo('</td><td>');
+echo('</td></tr>');
+}
+echo('</tbody><table>'); 
+}
     $sql = "SELECT * FROM transfer";
     $stmt = $pdo->query($sql);
         echo('<table class="table table-striped">
