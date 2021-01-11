@@ -30,6 +30,9 @@ input[type=number] {
 .form label{
 
 }
+option{
+  color:red;
+}
      </style>
  </head>
  <nav style="background-color:black;">
@@ -53,6 +56,11 @@ if(isset($_POST['sub'])){
     $am = $_POST['AM'];
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
+    if($lname == 1){
+      echo '<script>alert("Wrong Account Number");
+      window.location.replace("transfer.php");
+    </script>';
+    }
     $sql = "SELECT * FROM `user` WHERE AccountNo = '$fname'";
     $stmt = $pdo->query($sql);
     $count = $stmt->rowCount();
@@ -124,22 +132,36 @@ if(isset($_SESSION["id"])){
                         </div>
                     </div>
 
+                  
                     <div class="form-group row">
-                        <label for="lname" class="col-md-2 col-form-label">Enter Reciver Account Number</label>
+                    <label for="lname" class="col-md-2 col-form-label">Enter Reciver Account Number</label>
+                    <div class="col-md-4">
+                    <select  id = "lname"name="lname" value = "lname" class="form-control">
+                    <option value = "1">Select Reciver Account No</option> 
+                    <?php
+                       $qu = "SELECT * FROM user";
+                       $stmt = $pdo->query($qu);
+                       while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
+                    <option value="<?php echo(htmlentities( $row['AccountNo']));?>"><?php  echo(htmlentities($row['AccountNo']));?></option>
+                    <?php 
+                       }
+                       ?>
+                      </div>
+                     
+                      <div>
+                        <label for="AM" class="col-md-2 col-form-label">Amount To Be Transferd</label>
                         <div class="col-md-4">
-                            <input type="number" name="lname" id="lname" class="form-control"  placeholder = "Enter Reciver Account Number:">
+                            <input type="number" name="AM" id="AM" class="form-control"  placeholder = "Amount To be Transferd">
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="am" class="col-md-2 col-form-label">Amount To be Transferd</label>
-                        <div class="col-md-4">
-                            <input type="number" name="AM" id="am" class="form-control"  placeholder = "Amount To be Transferd:">
-                        </div>
-                    </div>
+                    </diV>
+
                     <div class="form-group row">
                         <div class="col-md-10">
                         <button type="submit" class="btn btn-primary" name="sub">Transfer</button>
                         <button type="submit" class="btn btn-secondary" name="cancel">Cancel</button>
                     </div>
+                  
+            </div>
 </form>
 </div>

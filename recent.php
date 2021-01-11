@@ -31,7 +31,7 @@
       </nav>
       <div class="jumbotron">
         <form method="post" class="form-inline d-flex justify-content-center md-form form-sm mt-0">
-                  <input type="text" name="search" placeholder="Search for Customers" class="form-control" >
+                  <input type="text" name="search" placeholder="Search" class="form-control" >
                   <select  id = "se"name="se" value = "se" class="form-control">
                     <option value="TransId" >Transaction Id</option>
                     <option value="fname"> Sender  Name</option>
@@ -58,6 +58,7 @@
           <th scope="col">Reciver Name</th>
           <th scope="col">Reciver Account Number</th>
           <th scope="col">Amout Transferd</th>
+          <th scope="col">Time</th>
       </tr>
   </thead><tbody>');
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -75,14 +76,15 @@ echo(htmlentities($row['lan']));
 echo('</td><td>');
 echo(htmlentities($row['amount']));
 echo('</td><td>');
+echo(htmlentities($row['Date']));
 echo('</td></tr>');
 }
 echo('</tbody><table>'); 
 }
-    $sql = "SELECT * FROM transfer";
+    $sql = "SELECT * FROM transfer ORDER BY Date DESC";
     $stmt = $pdo->query($sql);
         echo('<table class="table table-striped">
-                <thead>
+                <thead> 
                     <tr>
                         <th scope="col">Transaction Id</th>
                         <th scope="col">Sender Name</th>
@@ -90,6 +92,7 @@ echo('</tbody><table>');
                         <th scope="col">Reciver Name</th>
                         <th scope="col">Reciver Account Number</th>
                         <th scope="col">Amout Transferd</th>
+                        <th scope="col">Time</th>
                     </tr>
                 </thead><tbody>');
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -107,6 +110,7 @@ echo('</tbody><table>');
         echo('</td><td>');
         echo(htmlentities($row['amount']));
         echo('</td><td>');
+        echo(htmlentities($row['Date']));
         echo('</td></tr>');
     }
     echo('</tbody><table>'); 
